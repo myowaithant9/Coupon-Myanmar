@@ -31,7 +31,7 @@ import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ApiProvider } from '../providers/api/api'; //for api
-
+ 
 @NgModule({
   declarations: [
     MyApp,

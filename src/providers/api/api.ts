@@ -17,7 +17,7 @@ export class ApiProvider {
   constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
   }
-
+ 
   //for shop list api start 
   getShopListAPI() {
     return new Promise(resolve => {

@@ -69,7 +69,7 @@ export class ShopPage {
       })
     }
   }
-
+ 
 
   goDetail(data)
   {
