@@ -1,0 +1,16 @@
+<ion-header no-shadow no-border>
+  <ion-navbar color="coupon">
+    <button ion-button menuToggle color="yellow">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Supertab work</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <super-tabs toolbarColor="light" toolbarBackground="hcolor">
+    <super-tab [root]="tab1Root" title="Shop"></super-tab>
+    <super-tab [root]="tab2Root" title="Coupon"></super-tab>
+    <super-tab [root]="tab3Root" title="Promotion"></super-tab>
+  </super-tabs>
+</ion-content>
+

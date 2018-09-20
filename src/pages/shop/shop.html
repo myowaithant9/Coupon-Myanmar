@@ -1,0 +1,35 @@
+<ion-content>
+ <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+ <!--<ion-row>
+     <ion-col col-5><div align="center">By Popular</div></ion-col>
+     <ion-col col-2><div align="center"><ion-toggle color="secondary"></ion-toggle></div></ion-col>
+     <ion-col col-5><div align="center">By Rating</div></ion-col> 
+    </ion-row>-->
+ <!--<div align="center">By Popular <ion-toggle color="secondary"></ion-toggle> By Rating</div> -->
+ <!--< ion-list>
+  <ion-item *ngFor="let item of items">
+    {{ item }}
+  </ion-item>
+ </ion-list> -->
+
+ <ion-list>
+  <button ion-item *ngFor="let shop of shops" (click)="goDetail(item)">
+    <ion-thumbnail item-start>
+        <img src="{{shop.icon_url.url}}">
+    </ion-thumbnail>
+    <h2>{{shop.title}}</h2>
+    <!--
+    <rating [(ngModel)]="item.rate" 
+        readOnly="true"   
+        max="5" 
+        emptyStarIconName="star-outline" 
+        halfStarIconName="star-half" 
+        starIconName="star" 
+        nullable="false"> 
+    </rating>
+    -->
+    <p><ion-icon name = "ionic"></ion-icon>&nbsp;{{shop.category_name}}</p>
+    <!--<button ion-button clear (click)="goDetail(item)" item-end>View</button>-->
+  </button>
+</ion-list>
+</ion-content>
