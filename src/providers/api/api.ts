@@ -9,14 +9,16 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ApiProvider {
-  shoplist_apiUrl = 'http://thetthar.com/api/v1/shops/all_list'; //for api
+  shoplist_apiUrl = 'http://thetthar.com/api/v1/shops/all_list'; //for shop list api
+  couponlist_apiUrl = 'http://thetthar.com/api/v1/shops/all_list'; //for coupon list api
+
 
 
   constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
   }
 
-  //for api start 
+  //for shop list api start 
   getShopListAPI() {
     return new Promise(resolve => {
       this.http.get(this.shoplist_apiUrl).subscribe(data => {
@@ -26,25 +28,20 @@ export class ApiProvider {
       });
     });
   }
+  //for shop list api end
 
-  addUser(data) {
-    return new Promise((resolve, reject) => {
-      this.http.post(this.shoplist_apiUrl+'/users', JSON.stringify(data))
-
-/*
-      this.http.post(this.apiUrl+'/users', JSON.stringify(data), {
-        headers: new HttpHeaders().set('Authorization', 'my-auth-token'),
-        params: new HttpParams().set('id', '3'),
-      })
-*/
-        .subscribe(res => {
-          resolve(res);
-        }, (err) => {
-          reject(err);
-        });
+   //for shop list api start 
+   getCouponListAPI() {
+    return new Promise(resolve => {
+      this.http.get(this.couponlist_apiUrl).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
     });
-  }  
+  }
+  //for shop list api end
 
-  //for api end
+  
 
 }

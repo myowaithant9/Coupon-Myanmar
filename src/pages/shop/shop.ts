@@ -35,7 +35,7 @@ export class ShopPage {
     //console.log('ionViewDidLoad ShopPage');
   }
 
-  //for api3
+  //for shoplist api
   getShopList() {
     this.apiProvider.getShopListAPI()
     .then(data => {
@@ -55,7 +55,7 @@ export class ShopPage {
     ]
   }
 */
-  getItems(ev: any) {
+  searchShops(ev: any) {
     // Reset items back to all of the items
     this.getShopList();
 
@@ -69,6 +69,7 @@ export class ShopPage {
       })
     }
   }
+
 
   goDetail(data)
   {

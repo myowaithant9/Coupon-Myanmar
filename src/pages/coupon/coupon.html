@@ -1,3 +1,21 @@
 <ion-content>
-    <div align="center"><h1>Coupon</h1></div>
-</ion-content>
+        <ion-searchbar (ionInput)="searchCoupons($event)"></ion-searchbar>
+        <!--<ion-row>
+            <ion-col col-5><div align="center">By Popular</div></ion-col>
+            <ion-col col-2><div align="center"><ion-toggle color="secondary"></ion-toggle></div></ion-col>
+            <ion-col col-5><div align="center">By Rating</div></ion-col> 
+           </ion-row>-->
+        <!--<div align="center">By Popular <ion-toggle color="secondary"></ion-toggle> By Rating</div> -->
+        <!--< ion-list>
+         <ion-item *ngFor="let item of items">
+           {{ item }}
+         </ion-item>
+        </ion-list> -->
+       
+        <ion-list>
+         <button ion-item *ngFor="let coupon of coupons" (click)="goDetail(item)">
+            <img src="{{coupon.icon_url.url}}">
+         </button>
+       </ion-list>
+       </ion-content>
+       
