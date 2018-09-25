@@ -1,4 +1,28 @@
-
 <ion-content>
-  <div align="center"><h1>Promotion</h1></div>
-</ion-content>
+    <ion-searchbar (ionInput)="searchPromotions($event)"></ion-searchbar>
+    <!--<ion-row>
+        <ion-col col-5><div align="center">By Popular</div></ion-col>
+        <ion-col col-2><div align="center"><ion-toggle color="secondary"></ion-toggle></div></ion-col>
+        <ion-col col-5><div align="center">By Rating</div></ion-col> 
+       </ion-row>-->
+    <!--<div align="center">By Popular <ion-toggle color="secondary"></ion-toggle> By Rating</div> -->
+    <!--< ion-list>
+     <ion-item *ngFor="let item of items">
+       {{ item }}
+     </ion-item> 
+    </ion-list> -->
+   
+    <ion-list>
+     <button ion-item *ngFor="let promotion of promotions" (click)="goDetail(item)">
+       <div class="item-ribbon">
+          <span class="ribbon sale">
+            <span>
+              {{dateDiff(promotion.expire_date)}}
+            </span>
+          </span>
+          <img src="{{promotion.icon_url.url}}">
+        </div>
+     </button>
+   </ion-list>
+   </ion-content>
+   

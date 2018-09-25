@@ -27,10 +27,13 @@ import { TermsPage } from '../pages/terms/terms';
 import { AboutappPage } from '../pages/aboutapp/aboutapp';
 import { SignOutPage } from '../pages/sign-out/sign-out';
 import { SplashPage } from '../pages/splash/splash';
+//import { CouponDetailPage } from '../pages/splash/splash';
+//import { SplashPage } from '../pages/splash/splash';
 import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ApiProvider } from '../providers/api/api'; //for api
+import { CouponDetailPage } from '../pages/coupon-detail/coupon-detail';
  
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { ApiProvider } from '../providers/api/api'; //for api
     LoginPage,
     ShopPage,
     CouponPage,
+    CouponDetailPage,
     PromotionPage,
     TabsPage,
     ShopFollowPage,
@@ -65,6 +69,7 @@ import { ApiProvider } from '../providers/api/api'; //for api
     LoginPage,
     ShopPage,
     CouponPage,
+    CouponDetailPage,
     PromotionPage,
     TabsPage,
     ShopFollowPage,

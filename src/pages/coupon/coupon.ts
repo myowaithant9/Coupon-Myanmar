@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { ApiProvider } from '../../providers/api/api';
 
+import { CouponDetailPage } from '../coupon-detail/coupon-detail';
+
+
 
 /**
  * Generated class for the CouponPage page.
@@ -10,7 +13,7 @@ import { ApiProvider } from '../../providers/api/api';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
- 
+
 @IonicPage()
 @Component({
   selector: 'page-coupon',
@@ -18,6 +21,9 @@ import { ApiProvider } from '../../providers/api/api';
 })
 export class CouponPage {
   coupons: any;
+  currentDate: any; 
+  expireDate: any;
+  leftDate: string;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider) {
@@ -37,9 +43,24 @@ export class CouponPage {
     });
   }
 
+  dateDiff(expdate){
+    var now = new Date();
+    var timeDiff = Math.abs(now.getDate() - new Date(expdate).getDate());
+    if (timeDiff == 0){
+      return "Today";
+    }
+    else if (timeDiff == 1){
+      return "Tomorrow";
+    }
+    
+    else {
+      return timeDiff + " days left";
+    }
+  }
+
   searchCoupons(ev: any) {
     // Reset items back to all of the items
-    this.getCouponList();
+    //this.getCouponList();
 
     // set val to the value of the searchbar
     const val = ev.target.value;
@@ -50,6 +71,12 @@ export class CouponPage {
         //return (coupon.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+
+  goDetail(item){
+    this.navCtrl.push(CouponDetailPage, {
+      item : item
+    })
   }
 
 }

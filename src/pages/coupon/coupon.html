@@ -14,8 +14,15 @@
        
         <ion-list>
          <button ion-item *ngFor="let coupon of coupons" (click)="goDetail(item)">
-            <img src="{{coupon.icon_url.url}}">
-         </button>
+            <div class="item-ribbon">
+                <span class="ribbon sale">
+                    <span> 
+                        {{dateDiff(coupon.expire_date)}}
+                    </span>
+                </span>
+                <img src="{{coupon.icon_url.url}}">
+            </div>
+        </button>
        </ion-list>
        </ion-content>
        

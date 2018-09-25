@@ -22,10 +22,10 @@ export class LoginPage {
 
   // login and go to home page
   login() {
-    if (this.email == "super@gmail.com" && this.password == "123")
+    //if (this.email == "super@gmail.com" && this.password == "123")
       this.nav.setRoot(TabsPage);
-    else
-      alert("email or password wrong");
+    //else
+      //alert("email or password wrong");
   }
 
   forgotPass() {
