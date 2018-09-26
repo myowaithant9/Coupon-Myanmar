@@ -14,9 +14,57 @@
 
 
 <ion-content padding>
-    <button ion-item *ngFor="let coupon of coupons">
-      <img src="{{coupon.icon_url.url}}">
-    </button>
+    <ion-item ion-item *ngFor="let coupon of coupondetail">
+      <img src="{{coupon.icon_url.url}}" class="itemimage" >
+      
+
+      <ion-row no-padding>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start (click)="savetoast()">
+            <ion-icon name='heart'></ion-icon>
+              Save
+          </button>
+
+        </ion-col>
+        <ion-col text-center>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='star'></ion-icon>
+            Use
+          </button>
+        </ion-col>
+        <ion-col text-right>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='share-alt'></ion-icon>
+            Share
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <!--<ion-card-content>-->
+          <!--<h2 class="couponname">{{coupon.coupon_name}}</h2>-->
+          <p>{{coupon.description}}</p>
+      <!--</ion-card-content>-->
+      <!--
+      <p>
+        <button ion-button clear icon-start>
+          <ion-icon name='heart' is-active="false"></ion-icon>
+          Save
+        </button>
+
+        <button ion-button clear icon-start>
+          <ion-icon name='heart' is-active="false"></ion-icon>
+          Use
+        </button>
+
+        <button ion-button clear icon-start>
+          <ion-icon name='share' is-active="false"></ion-icon>
+          Share
+        </button>
+  
+          
+      </p>
+      -->
+    </ion-item>
 
 
 </ion-content>

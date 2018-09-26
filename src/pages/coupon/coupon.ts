@@ -5,6 +5,9 @@ import { ApiProvider } from '../../providers/api/api';
 
 import { CouponDetailPage } from '../coupon-detail/coupon-detail';
 
+import moment from 'moment';
+declare var require: any;
+
 
 
 /**
@@ -44,17 +47,25 @@ export class CouponPage {
   }
 
   dateDiff(expdate){
-    var now = new Date();
-    var timeDiff = Math.abs(now.getDate() - new Date(expdate).getDate());
-    if (timeDiff == 0){
+    let moment = require('moment');
+    let todayDate = new Date();
+    let date1 = moment(todayDate, 'YYYY-MM-DD'),
+       date2 = moment(expdate, 'YYYY-MM-DD');
+   
+    let duration = moment.duration(date2.diff(date1));
+    duration = duration.asDays();
+    
+    //console.log("date " + Math.ceil(duration));
+
+    if (Math.ceil(duration) == 0){
       return "Today";
     }
-    else if (timeDiff == 1){
+    else if (Math.ceil(duration) == 1){
       return "Tomorrow";
     }
     
     else {
-      return timeDiff + " days left";
+      return Math.ceil(duration) + " days left";
     }
   }
 
@@ -73,9 +84,9 @@ export class CouponPage {
     }
   }
 
-  goDetail(item){
+  goDetail(couponitem){
     this.navCtrl.push(CouponDetailPage, {
-      item : item
+      data : couponitem
     })
   }
 

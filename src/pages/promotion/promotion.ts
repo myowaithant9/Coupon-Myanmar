@@ -3,6 +3,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { ApiProvider } from '../../providers/api/api';
 
+import { PromotionDetailPage } from '../promotion-detail/promotion-detail';
+
+
+import moment from 'moment';
+declare var require: any;
+
 
 /**
  * Generated class for the PromotionPage page.
@@ -38,19 +44,28 @@ export class PromotionPage {
   }
 
   dateDiff(expdate){
-    var now = new Date();
-    var timeDiff = Math.abs(now.getDate() - new Date(expdate).getDate());
-    if (timeDiff == 0){
+    let moment = require('moment');
+    let todayDate = new Date();
+    let date1 = moment(todayDate, 'YYYY-MM-DD'),
+       date2 = moment(expdate, 'YYYY-MM-DD');
+   
+    let duration = moment.duration(date2.diff(date1));
+    duration = duration.asDays();
+    
+    //console.log("date " + Math.ceil(duration));
+
+    if (Math.ceil(duration) == 0){
       return "Today";
     }
-    else if (timeDiff == 1){
+    else if (Math.ceil(duration) == 1){
       return "Tomorrow";
     }
     
     else {
-      return timeDiff + " days left";
+      return Math.ceil(duration) + " days left";
     }
   }
+  
 
   searchCoupons(ev: any) {
     // Reset items back to all of the items
@@ -65,6 +80,12 @@ export class PromotionPage {
         //return (coupon.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+
+  goDetail(promotionitem){
+    this.navCtrl.push(PromotionDetailPage, {
+      data : promotionitem
+    })
   }
 
 }

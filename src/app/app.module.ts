@@ -34,6 +34,7 @@ import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiProvider } from '../providers/api/api'; //for api
 import { CouponDetailPage } from '../pages/coupon-detail/coupon-detail';
+import { PromotionDetailPage } from '../pages/promotion-detail/promotion-detail';
  
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CouponDetailPage } from '../pages/coupon-detail/coupon-detail';
     CouponPage,
     CouponDetailPage,
     PromotionPage,
+    PromotionDetailPage,
     TabsPage,
     ShopFollowPage,
     NearMePage,
@@ -71,6 +73,7 @@ import { CouponDetailPage } from '../pages/coupon-detail/coupon-detail';
     CouponPage,
     CouponDetailPage,
     PromotionPage,
+    PromotionDetailPage,
     TabsPage,
     ShopFollowPage,
     NearMePage,
