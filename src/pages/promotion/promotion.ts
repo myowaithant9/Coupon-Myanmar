@@ -86,6 +86,10 @@ export class PromotionPage {
     this.navCtrl.push(PromotionDetailPage, {
       data : promotionitem
     })
+
+    this.apiProvider.shopID = promotionitem.shop_id;
+    this.apiProvider.promotionID = promotionitem.id;
+    //console.log("this.apiProvider.shopID from goDetail:" + this.apiProvider.shopID);
   }
 
 }

@@ -21,6 +21,7 @@ export class ApiProvider {
 
   constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
+    //this.getPromotionList();
   }
  
   //for shop list api start 
@@ -62,7 +63,7 @@ export class ApiProvider {
   //for related promotion list api start 
   getRelatdPromotionAPI() {
     return new Promise(resolve => {
-      this.http.get(this.relatedpromotion_apiUrl + "/232/90").subscribe(data => {
+      this.http.get(this.relatedpromotion_apiUrl + this.shopID + "/" + this.promotionID).subscribe(data => {
         resolve(data);
         console.log("get Related Promotion url htal yout p");
       }, err => {
