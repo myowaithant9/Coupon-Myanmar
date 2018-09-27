@@ -9,9 +9,12 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ApiProvider {
+  shopID: any;
+  promotionID: any;
   shoplist_apiUrl = 'http://thetthar.com/api/v1/shops/all_list'; //for shop list api
   couponlist_apiUrl = 'http://thetthar.com/api/v1/coupons/all_list'; //for coupon list api
   promotionlist_apiUrl = 'http://thetthar.com/api/v1/promotions/all_list/169'; //for promotion list api
+  relatedpromotion_apiUrl = 'http://thetthar.com/api/v1/promotions/related/170/' // related promotion list for promotion details page
   
 
 
@@ -55,6 +58,19 @@ export class ApiProvider {
     });
   }
   //for promotion list api end
+
+  //for related promotion list api start 
+  getRelatdPromotionAPI() {
+    return new Promise(resolve => {
+      this.http.get(this.relatedpromotion_apiUrl + "/232/90").subscribe(data => {
+        resolve(data);
+        console.log("get Related Promotion url htal yout p");
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+  //for related promotion list api end
 
   
 

@@ -16,10 +16,7 @@
 <ion-content padding *ngFor="let promotion of promotiondetail">
     <ion-item ion-item>
         <img src="{{promotion.icon_url.url}}" class="itemimage" >
-        <p>{{promotion.description}}</p>
-        <p>{{promotion.start_date}}</p>
-        <h2>{{promotion.expire_date}}</h2>
-
+        
     </ion-item>
 
     <ion-toolbar no-border-top>
@@ -52,30 +49,15 @@
       </ion-list>
   
       <ion-list *ngSwitchCase="'related'">
-        <ion-item>
-          <ion-thumbnail item-start>
-            <img src="assets/img/thumbnail-kitten-1.jpg">
-          </ion-thumbnail>
-          <h2>Luna</h2>
-        </ion-item>
-        <ion-item>
-          <ion-thumbnail item-start>
-            <img src="assets/img/thumbnail-kitten-3.jpg">
-          </ion-thumbnail>
-          <h2>Milo</h2>
-        </ion-item>
-        <ion-item>
-          <ion-thumbnail item-start>
-            <img src="assets/img/thumbnail-kitten-4.jpg">
-          </ion-thumbnail>
-          <h2>Bandit</h2>
-        </ion-item>
-        <ion-item>
-          <ion-thumbnail item-start>
-            <img src="assets/img/thumbnail-kitten-2.jpg">
-          </ion-thumbnail>
-          <h2>Nala</h2>
-        </ion-item>
+        <button ion-item *ngFor="let relatedpromotion of relatedpromotions" (click)="goDetail(promotion)">
+
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="{{relatedpromotion.icon_url.url}}">
+            </ion-thumbnail>
+            <h2>{{relatedpromotion.promotion_name}}</h2>
+          </ion-item>
+        </button>
       </ion-list>
     </div>
 
