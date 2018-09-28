@@ -11,10 +11,12 @@ import { Injectable } from '@angular/core';
 export class ApiProvider {
   shopID: any;
   promotionID: any;
+  userID: any = 320;
   shoplist_apiUrl = 'http://thetthar.com/api/v1/shops/all_list'; //for shop list api
   couponlist_apiUrl = 'http://thetthar.com/api/v1/coupons/all_list'; //for coupon list api
   promotionlist_apiUrl = 'http://thetthar.com/api/v1/promotions/all_list/169'; //for promotion list api
   relatedpromotion_apiUrl = 'http://thetthar.com/api/v1/promotions/related/170/' // related promotion list for promotion details page
+  followshop_apiUrl = 'http://thetthar.com:3000/api/v1/shops/follow/' // related promotion list for promotion details page
   
 
 
@@ -72,6 +74,19 @@ export class ApiProvider {
     });
   }
   //for related promotion list api end
+
+  //for follow shop api start 
+  getFollowShopAPI() {
+    return new Promise(resolve => {
+      this.http.get(this.followshop_apiUrl + this.userID).subscribe(data => {
+        resolve(data);
+        console.log("get followshop by userID");
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+  //for follow shop api end
 
   
 

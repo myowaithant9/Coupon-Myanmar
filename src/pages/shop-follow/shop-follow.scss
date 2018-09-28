@@ -1,3 +1,14 @@
 page-shop-follow {
+    ul, menu, dir {
+        padding-inline-start: 0px !important;
+    }
+    ul.rating[_ngcontent-c0] li[_ngcontent-c0] {
+        padding: 0px !important;
+        color: #b36200 !important;
+    }
+ 
+    .item-md ion-thumbnail img {
+        width: 110px !important;
+    }
 
 }

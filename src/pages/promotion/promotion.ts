@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 
 import { ApiProvider } from '../../providers/api/api';
 
@@ -25,7 +25,7 @@ declare var require: any;
 export class PromotionPage {
   promotions: any;  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider, public app: App) {
     this.getPromotionList();
 
   }
@@ -82,8 +82,9 @@ export class PromotionPage {
     }
   }
 
+
   goDetail(promotionitem){
-    this.navCtrl.push(PromotionDetailPage, {
+    this.app.getRootNav().setRoot(PromotionDetailPage, {
       data : promotionitem
     })
 

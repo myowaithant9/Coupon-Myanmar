@@ -1,3 +1,18 @@
+.item-md.item-block .item-inner{
+    padding: 0px;
+}
+
+element.style{
+    margin-top: 30px !important;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+}
+
+.item-md{
+    padding: 0px;
+}
+
 page-promotion-detail {
     .itemimage {
         
@@ -22,10 +37,18 @@ page-promotion-detail {
         //padding-top: .3125rem;
         //padding-bottom: .3125rem;
         //margin-right: 1rem;
-        font-size: 1.25rem;
-        line-height: inherit;
+
+        font-size: 34px !important;
+        font-weight: bold;
+        line-height: 34px;
+        
+        font-family: Catamaran;
+        padding-top: 10px;
+        //font-size: 1.9rem;
+        //line-height: inherit;
         white-space: nowrap;
-        font-weight: 700!important;
+        //font-weight: 700 !important;
         color: #e6a756;
+        //line-height: 1.2;
     }
 }
