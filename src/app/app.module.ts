@@ -22,9 +22,9 @@ import { ShopFollowPage } from '../pages/shop-follow/shop-follow';
 import { NearMePage } from '../pages/near-me/near-me';
 import { CategoryPage } from '../pages/category/category';
 import { NotiPage } from '../pages/noti/noti';
-import { SettingsPage } from '../pages/settings/settings';
-import { TermsPage } from '../pages/terms/terms';
-import { AboutappPage } from '../pages/aboutapp/aboutapp';
+import { SettingsPage, TermsPage, AboutPage } from '../pages/settings/settings';
+//import { TermsPage } from '../pages/terms/terms';
+//import { AboutappPage } from '../pages/aboutapp/aboutapp';
 import { SignOutPage } from '../pages/sign-out/sign-out';
 import { SplashPage } from '../pages/splash/splash';
 //import { CouponDetailPage } from '../pages/splash/splash';
@@ -52,7 +52,7 @@ import { PromotionDetailPage } from '../pages/promotion-detail/promotion-detail'
     NotiPage,
     SettingsPage,
     TermsPage,
-    AboutappPage,
+    AboutPage,
     SignOutPage,
     SplashPage,
     ShopDetailPage
@@ -81,7 +81,7 @@ import { PromotionDetailPage } from '../pages/promotion-detail/promotion-detail'
     NotiPage,
     SettingsPage,
     TermsPage,
-    AboutappPage,
+    AboutPage,
     SignOutPage,
     SplashPage,
     ShopDetailPage

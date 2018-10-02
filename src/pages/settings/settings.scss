@@ -1,3 +1,23 @@
 page-settings {
 
 }
+
+page-terms {
+}
+
+.termsimg, .aboutimg{     
+    //width: '230px';
+    //height: '200px';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:40%;
+}
+
+.termstitle, .abouttitle{
+    text-align: center;
+}
+
+.termspara, .aboutpara{
+    text-align: justify;
+}

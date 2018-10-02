@@ -36,7 +36,7 @@
     <ion-card-header>
       <b>General</b>
     </ion-card-header>
-    <button ion-item>
+    <button ion-item (click)="openTermsPage()">
       <ion-icon large item-start name='flag'></ion-icon>
       <h2>Terms and conditions</h2>
     </button>
@@ -44,7 +44,7 @@
       <ion-icon large item-start name='trash'></ion-icon>
       <h2>Delete account</h2>
     </button>
-    <button ion-item>
+    <button ion-item (click)="openAboutPage()">
       <ion-icon large item-start name='chatbubbles'></ion-icon>
       <h2>About this app</h2>
     </button>

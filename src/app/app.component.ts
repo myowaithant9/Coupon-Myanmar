@@ -14,8 +14,8 @@ import { NearMePage } from '../pages/near-me/near-me';
 import { CategoryPage } from '../pages/category/category';
 import { NotiPage } from '../pages/noti/noti';
 import { SettingsPage } from '../pages/settings/settings';
-import { TermsPage } from '../pages/terms/terms';
-import { AboutappPage } from '../pages/aboutapp/aboutapp';
+//import { TermsPage } from '../pages/terms/terms';
+//import { AboutappPage } from '../pages/aboutapp/aboutapp';
 import { SignOutPage } from '../pages/sign-out/sign-out';
 
 import { SplashPage } from '../pages/splash/splash';
@@ -45,8 +45,8 @@ export class MyApp {
         component: CategoryPage, active: false, icon: 'ionic' },
       { title: 'Notification', component: NotiPage, active: false, icon: 'ionic' },
       { title: 'App Settings', component: SettingsPage, active: false, icon: 'archive' },
-      { title: 'Terms', component: TermsPage, active: false, icon: 'body' },
-      { title: 'About This App', component: AboutappPage, active: false, icon: 'bookmarks' },
+      //{ title: 'Terms', component: TermsPage, active: false, icon: 'body' },
+      //{ title: 'About This App', component: AboutappPage, active: false, icon: 'bookmarks' },
       { title: 'Sign Out', component: SignOutPage, active: false, icon: 'book' }
     ];
 
